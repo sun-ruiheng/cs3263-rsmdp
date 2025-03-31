@@ -1,0 +1,3 @@
+[console_scripts]
+eod = sdata.cli:eod
+intraday = sdata.cli:intraday

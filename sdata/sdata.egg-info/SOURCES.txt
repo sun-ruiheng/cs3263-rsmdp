@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+sdata/__init__.py
+sdata/cli.py
+sdata.egg-info/PKG-INFO
+sdata.egg-info/SOURCES.txt
+sdata.egg-info/dependency_links.txt
+sdata.egg-info/entry_points.txt
+sdata.egg-info/requires.txt
+sdata.egg-info/top_level.txt
