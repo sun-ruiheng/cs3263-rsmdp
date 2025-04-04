@@ -1,1 +1,3 @@
-ALPHA_VANTAGE_KEY = ZP3FYW2GOPLQPDGX
+.vscode/
+.ipynb_checkpoints/
+server/.venv
