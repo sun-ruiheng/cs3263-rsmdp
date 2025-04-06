@@ -114,6 +114,8 @@ def intraday():
     except ValueError:
         raise ValueError("Dates must be in YYYYMMDD format")
 
+    print(date_from_iso)
+    print(date_to_iso)
     # API request
     url = (
         f"https://api.stockdata.org/v1/data/intraday?"
