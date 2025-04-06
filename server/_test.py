@@ -303,13 +303,11 @@ class TradingTester:
 if __name__ == "__main__":
     import time
     
-    data1 = pd.read_csv("../IEX_data/20200302_AAPL.csv")
-    data2 = pd.read_csv("../IEX_data/20200302_AMZN.csv")
-    data_aapl = pd.read_csv("data/20250324_20250331_AAPL.csv")
-    data_amzn = pd.read_csv("data/20250324_20250331_AMZN.csv")
-    data_tsla = pd.read_csv("data/20250324_20250331_TSLA.csv")
+    data_aapl = pd.read_csv("data/20250402_AAPL.csv")
+    data_amzn = pd.read_csv("data/20250402_AMZN.csv")
+    data_tsla = pd.read_csv("data/20250402_TSLA.csv")
 
-    data = [data1, data2]
+    data = [data_aapl, data_amzn, data_tsla]
     expected_return_step_size = 5
     round_num_digits = 3
     transaction_cost = 0.005
@@ -327,6 +325,12 @@ if __name__ == "__main__":
     policy, V, steps, updates = ValueIterationExp.run(env, lamb=lamb, gamma=gamma, epsilon=epsilon)
     vi_time = time.time() - start_time
     print(f"Time to run value iteration: {vi_time:.2f} seconds")
+
+    n_episodes = 10
+    time_frame = 100
+    result, history_exec = TradingTester.test(env, policy, time_frame, n_episodes)
+    print(result)
+    print(history_exec)
 
     print("DONE")
 
